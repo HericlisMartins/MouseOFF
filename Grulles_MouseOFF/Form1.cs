@@ -17,7 +17,7 @@ namespace Grulles_MouseOFF
 {
     public partial class frmPrincipal : MetroForm 
     {
-        public void desabilitarDevcon() // Metodo para desabilitar o Mouse 
+        public void desabilitarDevcon() // Função para desabilitar o Mouse 
         {
             try
             {
