@@ -57,6 +57,7 @@
             this.btnDesativarAgora.TabIndex = 1;
             this.btnDesativarAgora.Text = "Desativar Agora";
             this.btnDesativarAgora.UseSelectable = true;
+            this.btnDesativarAgora.Click += new System.EventHandler(this.btnDesativarAgora_Click);
             // 
             // btnAtivar
             // 

@@ -17,16 +17,16 @@ namespace Grulles_MouseOFF
 {
     public partial class frmPrincipal : MetroForm 
     {
-        public void desabilitarDevcon()
+        public void desabilitarDevcon() // Metodo para desabilitar o Mouse 
         {
             try
             {
-                var psi = new ProcessStartInfo(@"C:\Program Files (x86)\Windows Kits\8.1\Tools\x64\devcon.exe");
+                var psi = new ProcessStartInfo(@"C:\Program Files (x86)\Windows Kits\8.1\Tools\x64\devcon.exe");//Inicializa uma nova instância da classe ProcessStartInfo especifica um nome de arquivo, ou seja, em nosso caso estamos buscando referências no Devcon. Toda vez que o programa iniciar a função é responsavel por "Startar" o Devcon.
 
                 psi.UseShellExecute = false;
 
 
-                psi.Arguments = @"disable * PID&1001&Col01\9&215c55b7&0&0000";
+                psi.Arguments = @"enabllee";
                 Process pDisable = Process.Start(psi);
                 
                 Console.In.Read();
@@ -36,6 +36,7 @@ namespace Grulles_MouseOFF
             catch (Exception e)
             {
                 string message = e.Message;
+                MetroMessageBox.Show(this, "O Mouse não esta conectado ao computador.", "Dispositivo não encontrado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 
             }
         }
@@ -50,7 +51,7 @@ namespace Grulles_MouseOFF
                 psi.UseShellExecute = false;
 
 
-                psi.Arguments = @"enable * PID&1001&Col01\9&215c55b7&0&0000";
+                psi.Arguments = @"findall *";
                 Process pEnable = Process.Start(psi);
 
                 Console.In.Read();
@@ -60,9 +61,9 @@ namespace Grulles_MouseOFF
             catch (Exception e)
             {
                 string message = e.Message;
+               
 
             }
-            
 
         }
     
@@ -108,15 +109,20 @@ namespace Grulles_MouseOFF
 
 
             MetroMessageBox.Show(this, "Deseja desativar o Mouse?", "Desativar Mouse", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-                
-                if (MessageBoxButtons.OK ==  MessageBoxButtons.OK)
-                {
-                    btnDesativar.Enabled = false;
-                    btnAtivar.Enabled = true;
-                    
-                }
 
-                desabilitarDevcon();
+            if (MessageBoxButtons.OK == MessageBoxButtons.OK)
+            {
+                btnDesativar.Enabled = false;
+                btnAtivar.Enabled = true;
+
+            }
+
+                
+        }
+
+        private void btnDesativarAgora_Click(object sender, EventArgs e)
+        {
+            desabilitarDevcon();
         }
     }
 }
