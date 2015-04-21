@@ -10,3 +10,15 @@ C:\Users\Jeferson\Documents\Faculdade FIC\3º Periodo\Laboratorio de ordenação
 C:\Users\Jeferson\Documents\Faculdade FIC\3º Periodo\Laboratorio de ordenação e pesquisa\Exercicios\Grulles_MouseOFF\Grulles_MouseOFF\bin\Debug\MetroFramework.dll
 C:\Users\Jeferson\Documents\Faculdade FIC\3º Periodo\Laboratorio de ordenação e pesquisa\Exercicios\Grulles_MouseOFF\Grulles_MouseOFF\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\Jeferson\Documents\Faculdade FIC\3º Periodo\Laboratorio de ordenação e pesquisa\Exercicios\Grulles_MouseOFF\Grulles_MouseOFF\obj\Debug\Grulles_MouseOFF.frmPrincipal.resources
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\bin\Debug\Grulles_MouseOFF.exe.config
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\obj\Debug\Grulles_MouseOFF.exe
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\obj\Debug\Grulles_MouseOFF.pdb
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\bin\Debug\Grulles_MouseOFF.exe
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\bin\Debug\Grulles_MouseOFF.pdb
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\bin\Debug\MetroFramework.Design.dll
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\bin\Debug\MetroFramework.dll
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\obj\Debug\Grulles_MouseOFF.csprojResolveAssemblyReference.cache
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\obj\Debug\Grulles_MouseOFF.frmPrincipal.resources
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\obj\Debug\Grulles_MouseOFF.Properties.Resources.resources
+C:\Users\Jeferson\Documents\GitHub\MouseOFF\Grulles_MouseOFF\obj\Debug\Grulles_MouseOFF.csproj.GenerateResource.Cache

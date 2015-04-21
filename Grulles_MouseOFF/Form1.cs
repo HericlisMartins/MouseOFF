@@ -21,39 +21,38 @@ namespace Grulles_MouseOFF
         {
             try
             {
-                var psi = new ProcessStartInfo(@"C:\Program Files (x86)\Windows Kits\8.1\Tools\x64\devcon.exe");//Inicializa uma nova instância da classe ProcessStartInfo especifica um nome de arquivo, ou seja, em nosso caso estamos buscando referências no Devcon. Toda vez que o programa iniciar a função é responsavel por "Startar" o Devcon.
+                var psi = new ProcessStartInfo(@"C:\Program Files (x86)\Windows Kits\8.1\Tools\x64\devcon.exe"); //A classe ProcessStartInfo especifica um conjunto de valores que são usados quando Devcon for iniciado. Ou seja ela é responsavel por buscar um arquivo externo.
 
                 psi.UseShellExecute = false;
 
 
-                psi.Arguments = @"enabllee";
-                Process pDisable = Process.Start(psi);
+                psi.Arguments = @"disable"; // Arguments Obtém  o conjunto de argumentos do Devcon para ser usado quando a aplicação for iniciada. Neste caso o Argumento é o Disable, responsavel por desabilitar o mouse.
+                Process pDisable = Process.Start(psi); // A Classe process fornece acesso ao local e remoto para INICIAR ou INTERROMPER processos do sistema local.
                 
                 Console.In.Read();
                 Console.ReadKey();
             }
 
-            catch (Exception e)
+            catch (Exception e) // Se o Mouse não estiver conectado ao computador, o Try Catch se trata a exceção informando que o Mouse não esta Conectado. 
             {
-                string message = e.Message;
+                string message = e.Message; // Variavel associada ao Exception ( Exceção ).
                 MetroMessageBox.Show(this, "O Mouse não esta conectado ao computador.", "Dispositivo não encontrado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 
             }
         }
-        public void habilitarMouse()
+        public void habilitarMouse() // Função para Habilitar o Mouse.
         {
 
 
             try
             {
-                var psi = new ProcessStartInfo(@"C:\Program Files (x86)\Windows Kits\8.1\Tools\x64\devcon.exe");
+                var psi = new ProcessStartInfo(@"C:\Program Files (x86)\Windows Kits\8.1\Tools\x64\devcon.exe"); //A classe ProcessStartInfo Especifica um conjunto de valores que são usados quando iniciar o Devcon
 
                 psi.UseShellExecute = false;
 
 
-                psi.Arguments = @"findall *";
-                Process pEnable = Process.Start(psi);
-
+                psi.Arguments = @"findall *"; // Arguments Obtém  o conjunto de argumentos do Devcon para ser usado quando a aplicação for iniciada. Neste caso o Argumento é o Enable, responsavel por desabilitar o mouse.
+                Process pEnable = Process.Start(psi); // A Classe process fornece acesso ao local e remoto para INICIAR ou INTERROMPER processos do sistema local.
                 Console.In.Read();
                 Console.ReadKey();
             }
@@ -96,33 +95,31 @@ namespace Grulles_MouseOFF
             
         }
 
-        private void btnAtivar_Click(object sender, EventArgs e)
+        private void btnAtivar_Click(object sender, EventArgs e) // Ativa a contagem de tempo que o usuario determinou.
         {
-            btnDesativar.Enabled = true;
-            btnAtivar.Enabled = false;
-            habilitarMouse();
+            btnDesativar.Enabled = true; // Quando o Usuario clicar em Ativar, o botaão Desativar estará Habilitado.
+            btnAtivar.Enabled = false; // Quando o Usuario Clicar em Ativar, o botão Ativar Estará Desabilitado
+            habilitarMouse(); // Função para desabilitar o Mouse.
             
         }
 
         private void btnDesativar_Click(object sender, EventArgs e)
         {
 
-
-            MetroMessageBox.Show(this, "Deseja desativar o Mouse?", "Desativar Mouse", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-
-            if (MessageBoxButtons.OK == MessageBoxButtons.OK)
-            {
-                btnDesativar.Enabled = false;
-                btnAtivar.Enabled = true;
-
-            }
-
                 
         }
 
         private void btnDesativarAgora_Click(object sender, EventArgs e)
         {
-            desabilitarDevcon();
+            MetroMessageBox.Show(this, "Deseja desativar o Mouse?", "Desativar Mouse", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk); // Pergunta se o Usuario deseja desativar o Mouse.
+
+            if (MessageBoxButtons.OK == MessageBoxButtons.OK) // Se o Usuario clicar em ok : O Botão Desativar fica Desabilitado e o Botão Ativar fica Habilitado.
+            {
+                btnDesativar.Enabled = false; 
+                btnAtivar.Enabled = true;
+
+            }
+            desabilitarDevcon(); // Função responsavel por desabilitar o mouse.
         }
     }
 }

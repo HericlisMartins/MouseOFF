@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnDesativarAgora = new MetroFramework.Controls.MetroButton();
             this.btnAtivar = new MetroFramework.Controls.MetroButton();
@@ -47,7 +48,7 @@
             // 
             // btnDesativarAgora
             // 
-            this.btnDesativarAgora.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDesativarAgora.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDesativarAgora.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnDesativarAgora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDesativarAgora.Location = new System.Drawing.Point(23, 222);
@@ -100,6 +101,7 @@
             this.Controls.Add(this.btnAtivar);
             this.Controls.Add(this.btnDesativarAgora);
             this.Controls.Add(this.metroLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmPrincipal";
             this.Resizable = false;
