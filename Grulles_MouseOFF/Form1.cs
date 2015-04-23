@@ -15,8 +15,13 @@ using System.Diagnostics;
 
 namespace Grulles_MouseOFF
 {
-    public partial class frmPrincipal : MetroForm 
+    public partial class frmPrincipal : MetroForm
     {
+        // Variaveis utilizadas na contagem de tempo em que o mouse sera desativado.
+        int segundosSolicitados;
+        int contador;
+        int auxiliar = 0;
+
         public void desabilitarDevcon() // Função para desabilitar o Mouse 
         {
             try
@@ -92,34 +97,74 @@ namespace Grulles_MouseOFF
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
         {
 
-            
+
         }
+
 
         private void btnAtivar_Click(object sender, EventArgs e) // Ativa a contagem de tempo que o usuario determinou.
         {
+           
+            segundosSolicitados = Int32.Parse(txtReceptor.Text);
+
+            if (tmpTimer.Enabled == false)
+            {
+                tmpTimer.Enabled = true;
+            }
+
+            else if (tmpTimer.Enabled == true)
+            {
+                tmpTimer.Enabled = false;
+            }
+
             btnDesativar.Enabled = true; // Quando o Usuario clicar em Ativar, o botaão Desativar estará Habilitado.
             btnAtivar.Enabled = false; // Quando o Usuario Clicar em Ativar, o botão Ativar Estará Desabilitado
-            habilitarMouse(); // Função para desabilitar o Mouse.
             
         }
 
         private void btnDesativar_Click(object sender, EventArgs e)
         {
-
+            btnAtivar.Enabled = true;
+            btnDesativar.Enabled = false;
+            lblInterface.Text = auxiliar.ToString();
+            tmpTimer.Enabled = false;
                 
         }
 
         private void btnDesativarAgora_Click(object sender, EventArgs e)
         {
-            MetroMessageBox.Show(this, "Deseja desativar o Mouse?", "Desativar Mouse", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk); // Pergunta se o Usuario deseja desativar o Mouse.
+            MetroMessageBox.Show(this, "Deseja desativar o Mouse.", "Dispositivo não encontrado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            
+        }
+        private void txtReceptor_Click(object sender, EventArgs e)
+        {
+           
+        }
 
-            if (MessageBoxButtons.OK == MessageBoxButtons.OK) // Se o Usuario clicar em ok : O Botão Desativar fica Desabilitado e o Botão Ativar fica Habilitado.
+        private void tmpTimer_Tick(object sender, EventArgs e)
+        {
+            contador = contador + 1; // Tempo é contato de 1 em 1
+            lblInterface.Text = contador.ToString(); // Converte o contador em String.
+
+            if (contador == segundosSolicitados)
             {
-                btnDesativar.Enabled = false; 
-                btnAtivar.Enabled = true;
+                MetroMessageBox.Show(this, "O Mouse foi desativado", "Mouse desativado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); // Se os segundos do contador for igual ao segundos no qual o usuario solicitou o mouse é desativado. Após essa condição as seguintes 
+                lblInterface.Text = auxiliar.ToString();
+                contador = 0; // Ao atingir os segundos solicitados pelo o usuario, o contador é "Zerado".
+                tmpTimer.Enabled = false; // O tempo é desativado
+                btnAtivar.Enabled = true; // O botão Ativar é Habilitado novamente.
+                btnDesativar.Enabled = false; // O botão desativar é desabilitado.
+                
+            }
+        }
+
+        private void txtReceptor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if(!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8) // Permite que o usuario digite apenas numeros na solicitação de segundos para desabilitar o mouse.
+            {
+	            e.Handled = true;
 
             }
-            desabilitarDevcon(); // Função responsavel por desabilitar o mouse.
         }
     }
 }
