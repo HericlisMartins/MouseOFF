@@ -45,3 +45,6 @@ Considerações importantes do Desenvolvimento.
 	* O programa ainda necessita de ter permissão de Administrador da máquina para desabilitar e habilitar os Drivers. 
 	* A arquitetura do processador interfere em qual DevCon será utilizado, se será o apropriado para 32 bits ou 64 bits, essa validação é feita pelo nosso Control.
 	* Toda vez que a função desabilitar for chamada o control enviara para o view um comando para uma mensagem de alerta ser exibida: Aperte qualquer tecla do teclado para habilitar o Mouse. 
+
+
+
