@@ -9,8 +9,6 @@ O Software MouseOFF foi desenvolvido com o objetivo de auxiliar as pessoas na ec
 <h5>Windows 8</h5>
 <h5>Windows 8.1</h5>
 
-<hr/>
-
 <h1> Métodos de Desenvolvimento </h1>
 <h3>DESENVOLVIMENTO MOUSE OFF</h3>
 
