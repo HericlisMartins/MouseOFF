@@ -9,13 +9,13 @@ O Software MouseOFF foi desenvolvido com o objetivo de auxiliar as pessoas na ec
 <h5>Windows 8</h5>
 <h5>Windows 8.1</h5>
 
-<hr>
+<hr/>
 
 <h1> Métodos de Desenvolvimento </h1>
 <h3>DESENVOLVIMENTO MOUSE OFF</h3>
 
-	Começamos o desenvolvimento do programa <b>Mouse off</b> com um projeto de software, colocando todas ideias e tudo que o programa deveria ter no papel. 
-	Depois disso, escolhemos a linguagem de programação <b>C# (Csharp)</b> como nosso ponto de partida na parte de layout e interação do software com o usuário (<b>Front-End</b>), assim criamos um simples formulário WINFORM contendo:
+	Começamos o desenvolvimento do programa Mouse off com um projeto de software, colocando todas ideias e tudo que o programa deveria ter no papel. 
+	Depois disso, escolhemos a linguagem de programação C# (Csharp) como nosso ponto de partida na parte de layout e interação do software com o usuário (Front-End), assim criamos um simples formulário WINFORM contendo:
 	
 	* 1 CAMPO NumericUpDown – Para escolher em quanto tempo o Mouse deve ser deligado. 
 	* 2 Botões Inputs – Para Ativar e Desativar  a contagem de tempo para o Mouse Desligar
