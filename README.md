@@ -11,35 +11,36 @@ O Software MouseOFF foi desenvolvido com o objetivo de auxiliar as pessoas na ec
 
 <hr>
 
-<h1> MÈtodos de Desenvolvimento </h1>
+<h1> M√©todos de Desenvolvimento </h1>
+<h3>DESENVOLVIMENTO MOUSE OFF</h3>
 
+	Come√ßamos o desenvolvimento do programa Mouse off com um projeto de software, colocando todas ideias e tudo que o programa deveria ter no papel. 
+	Depois disso, escolhemos a linguagem de programa√ß√£o C# (Csharp) como nosso ponto de partida na parte de layout e intera√ß√£o do software com o usu√°rio (Front-End), assim criamos um simples formul√°rio WINFORM contendo:
+	<ul>
+	<li>1 CAMPO NumericUpDown ‚Äì Para escolher em quanto tempo o Mouse deve ser deligado. </li>
+	<li>2 Bot√µes Inputs ‚Äì Para Ativar e Desativar  a contagem de tempo para o Mouse Desligar</li>
+	<li>1 Input ‚Äì Para desativar o Mouse a qualquer momento.<li>
+	</ul>
 
-DESENVOLVIMENTO MOUSE OFF
+Quando, o usu√°rio clicar em qualquer bot√£o deste WINFORM atrav√©s da fun√ß√£o ShellExec ser√° executado nosso m√≥dulo da segunda camada que foi feito em linguagem C, passando atrav√©s de Argumentos as determinadas fun√ß√µes que devem ser executadas pelo nosso Control, os argumentos v√°lidos a ser executado pelo nosso Back-End, s√£o eles: 
+‚Ä¢	Ativar ‚Äì Ativa o Mouse a qualquer momento
+‚Ä¢	Desativar ‚Äì Desativa o Mouse a qualquer momento
+	Tempo X  - Tempo para o mouse desligar, Eg. Tempo 60,o mouse deligara ap√≥s inatividade por 60 segundos.
+Escolhemos a Linguagem C para ser nosso m√≥dulo de controle, pela f√°cil intera√ß√£o com os arquivos do SO. Em qualquer uma das tomadas de a√ß√£o enviadas da linguagem de intera√ß√£o para a linguagem de controle ser√° feita em Background e n√£o ser√° percebida pelo usu√°rio. 
+Depois que os argumentos s√£o validados √© executado para cada caso uma a√ß√£o atrav√©s do Utilit√°rio de linha de comando DevCon.  O utilit√°rio DevCon √© um utilit√°rio de linha comando que age como uma alternativa para o Gerenciador de dispositivos. Usando o DevCon, √© poss√≠vel ativar, desativar, reiniciar, atualizar, remover e consultar dispositivos individuais ou grupos de dispositivos. Pode ser encontrado e baixado no site da Microsoft.
+Utilizamos apenas dois comandos do Devcon s√£o eles:
+‚Ä¢	enable - Ativa os dispositivos que correspondam ao hardware espec√≠fico ou identifica√ß√£o de inst√¢ncia.
+‚Ä¢	disable - Desativa os dispositivos que correspondam ao hardware espec√≠fico ou identifica√ß√£o de inst√¢ncia.
 
-ComeÁamos o desenvolvimento do programa Mouse off com um projeto de software, colocando todas ideias e tudo que o programa deveria ter no papel. 
-Depois disso, escolhemos a linguagem de programaÁ„o C# (Csharp) como nosso ponto de partida na parte de layout e interaÁ„o do software com o usu·rio (Front-End), assim criamos um simples formul·rio WINFORM contendo:
-ï	1 CAMPO NumericUpDown ñ Para escolher em quanto tempo o Mouse deve ser deligado. 
-ï	2 Botıes Inputs ñ Para Ativar e Desativar  a contagem de tempo para o Mouse Desligar
-ï	1 Input ñ Para desativar o Mouse a qualquer momento.
-Quando, o usu·rio clicar em qualquer bot„o deste WINFORM atravÈs da funÁ„o ShellExec ser· executado nosso mÛdulo da segunda camada que foi feito em linguagem C, passando atravÈs de Argumentos as determinadas funÁıes que devem ser executadas pelo nosso Control, os argumentos v·lidos a ser executado pelo nosso Back-End, s„o eles: 
-ï	Ativar ñ Ativa o Mouse a qualquer momento
-ï	Desativar ñ Desativa o Mouse a qualquer momento
-	Tempo X  - Tempo para o mouse desligar, Eg. Tempo 60,o mouse deligara apÛs inatividade por 60 segundos.
-Escolhemos a Linguagem C para ser nosso mÛdulo de controle, pela f·cil interaÁ„o com os arquivos do SO. Em qualquer uma das tomadas de aÁ„o enviadas da linguagem de interaÁ„o para a linguagem de controle ser· feita em Background e n„o ser· percebida pelo usu·rio. 
-Depois que os argumentos s„o validados È executado para cada caso uma aÁ„o atravÈs do Utilit·rio de linha de comando DevCon.  O utilit·rio DevCon È um utilit·rio de linha comando que age como uma alternativa para o Gerenciador de dispositivos. Usando o DevCon, È possÌvel ativar, desativar, reiniciar, atualizar, remover e consultar dispositivos individuais ou grupos de dispositivos. Pode ser encontrado e baixado no site da Microsoft.
-Utilizamos apenas dois comandos do Devcon s„o eles:
-ï	enable - Ativa os dispositivos que correspondam ao hardware especÌfico ou identificaÁ„o de inst‚ncia.
-ï	disable - Desativa os dispositivos que correspondam ao hardware especÌfico ou identificaÁ„o de inst‚ncia.
+Quando o argumento cada argumento √© passado tratemos 1 solu√ß√£o diferente:
+‚Ä¢	Ativar ‚Äì passamos para o Devcon o comando:  enable *Mouse*
+‚Ä¢	Desativar - passamos para o Devcon o comando:  disable *Mouse*
+‚Ä¢	Tempo X ‚Äì √â executado uma fun√ß√£o que espera o tempo determinado em X, caso haja alguma intera√ß√£o com o mouse a contagem √© reiniciada. Caso o tempo acabe, retornara uma execu√ß√£o para desabilitar o mouse.
 
-Quando o argumento cada argumento È passado tratemos 1 soluÁ„o diferente:
-ï	Ativar ñ passamos para o Devcon o comando:  enable *Mouse*
-ï	Desativar - passamos para o Devcon o comando:  disable *Mouse*
-ï	Tempo X ñ … executado uma funÁ„o que espera o tempo determinado em X, caso haja alguma interaÁ„o com o mouse a contagem È reiniciada. Caso o tempo acabe, retornara uma execuÁ„o para desabilitar o mouse.
-
-ConsideraÁıes importantes do Desenvolvimento.
-ï	O programa ainda necessita de ter permiss„o de Administrador da m·quina para desabilitar e habilitar os Drivers. 
-ï	A arquitetura do processador interfere em qual DevCon ser· utilizado, se ser· o apropriado para 32 bits ou 64 bits, essa validaÁ„o È feita pelo nosso Control.
-ï	Toda vez que a funÁ„o desabilitar for chamada o control enviara para o view um comando para uma mensagem de alerta ser exibida: Aperte qualquer tecla do teclado para habilitar o Mouse. 
+Considera√ß√µes importantes do Desenvolvimento.
+‚Ä¢	O programa ainda necessita de ter permiss√£o de Administrador da m√°quina para desabilitar e habilitar os Drivers. 
+‚Ä¢	A arquitetura do processador interfere em qual DevCon ser√° utilizado, se ser√° o apropriado para 32 bits ou 64 bits, essa valida√ß√£o √© feita pelo nosso Control.
+‚Ä¢	Toda vez que a fun√ß√£o desabilitar for chamada o control enviara para o view um comando para uma mensagem de alerta ser exibida: Aperte qualquer tecla do teclado para habilitar o Mouse. 
 
 
 
